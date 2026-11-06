@@ -622,6 +622,7 @@ body {
 #media-image,
 #media-video {
     display: none;
+    visibility: hidden;
 
     max-width: 100%;
     max-height: 80vh;
@@ -673,4 +674,35 @@ body {
     transform: rotate(90deg);
 }
 
+
+/* Ẩn ảnh và video khi Media Viewer chưa mở */
+#media-viewer:not(.active) {
+    display: none !important;
+}
+
+#media-viewer.active {
+    display: flex !important;
+}
+
+#media-image,
+#media-video {
+    display: none;
+}
+
+/* Ẩn các phần tử media lỗi khi chưa mở */
+#media-viewer:not(.active) img,
+#media-viewer:not(.active) video {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Ẩn nút đóng khi Media Viewer chưa mở */
+#media-viewer:not(.active) .close-media-viewer {
+    display: none !important;
+}
+
+#media-image[hidden],
+#media-video[hidden] {
+    display: none !important;
+}
 }

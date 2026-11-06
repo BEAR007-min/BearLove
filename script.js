@@ -380,6 +380,18 @@ const mediaImage = document.getElementById('media-image');
 const mediaVideo = document.getElementById('media-video');
 const closeMediaButton = document.getElementById('close-media-viewer');
 
+// Ẩn nội dung media ngay khi website khởi động
+mediaViewer.classList.remove('active');
+
+mediaImage.style.display = 'none';
+mediaVideo.style.display = 'none';
+
+mediaImage.removeAttribute('src');
+mediaVideo.pause();
+mediaVideo.removeAttribute('src');
+mediaVideo.removeAttribute('controls');
+mediaVideo.load();
+
 // Công cụ nhận diện ảnh/video trong không gian 3D
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
@@ -403,12 +415,18 @@ function openMediaViewer(item) {
     mediaVideo.load();
 
     // Ẩn cả hai loại nội dung trước khi hiển thị
-    mediaImage.style.display = 'none';
-    mediaVideo.style.display = 'none';
+    mediaImage.hidden = true;
+    mediaImage.hidden = false;
+    mediaVideo.hidden = true;
+    mediaVideo.hidden = false;
+
+    mediaImage.style.visibility = 'hidden';
+    mediaVideo.style.visibility = 'hidden';
 
     if (item.type === 'image') {
         mediaImage.src = item.source;
         mediaImage.style.display = 'block';
+        mediaImage.style.visibility = 'visible';
     }
 
     if (item.type === 'video') {
@@ -434,6 +452,9 @@ function closeMediaViewer() {
     mediaVideo.load();
 
     mediaImage.removeAttribute('src');
+
+    mediaImage.hidden = true;
+    mediaVideo.hidden = true;
 }
 
 // Nhấn vào ảnh/video trên quỹ đạo
