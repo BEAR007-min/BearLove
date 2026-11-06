@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Một món quà nhỏ chứa đựng những điều yêu thương.">
+
+    <title>BearLove - Gửi người em thương</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- KHU VỰC 1: TRÁI TIM 3D -->
+    <section id="hero">
+
+        <canvas id="heart-canvas"></canvas>
+
+        <div class="hero-content">
+            <h1>Gửi người anh thương</h1>
+
+            <p>Kéo để xoay trái tim ♥</p>
+        </div>
+
+        <div class="scroll-hint">
+            Cuộn xuống để mở món quà ↓
+        </div>
+
+    </section>
+
+
+    <!-- KHU VỰC 2: PHONG THƯ -->
+    <section id="love-letter">
+
+        <div class="letter-heading">
+            <h2>Một bức thư dành riêng cho em</h2>
+
+            <p>
+                Một chút yêu thương được gửi gắm qua những dòng chữ.
+            </p>
+        </div>
+
+
+        <!-- Nhập tên người nhận -->
+        <input
+            type="text"
+            id="recipient-name"
+            placeholder="Nhập tên người ấy..."
+            maxlength="30"
+        >
+
+
+        <!-- Phong thư -->
+        <div class="envelope-scene">
+
+            <div id="envelope">
+
+                <div class="envelope-back"></div>
+
+                <div class="envelope-letter">
+                    Gửi em ♥
+                </div>
+
+                <div class="envelope-front"></div>
+
+                <div class="envelope-flap">
+                    ♥
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p class="envelope-hint">
+            Chạm vào phong thư để mở
+        </p>
+
+    </section>
+
+
+    <!-- KHU VỰC 3: NỘI DUNG THƯ -->
+    <div id="letter-overlay">
+
+        <div class="letter-paper">
+
+            <span class="decoration decoration-left">❦</span>
+            <span class="decoration decoration-right">❦</span>
+
+            <h3>
+                Gửi <span id="recipient-display">em yêu</span>,
+            </h3>
+
+            <div class="letter-content">
+
+                <p>
+                    Anh không biết phải bắt đầu thế nào để nói hết những điều mình nghĩ.
+                    Có lẽ anh không phải người giỏi nói những lời ngọt ngào,
+                    nhưng anh thật sự muốn em biết rằng em có một vị trí rất đặc biệt trong lòng anh.
+                </p>
+
+                <p>
+                    Anh thích những lúc được nói chuyện với em, kể cả những câu chuyện chẳng có gì quan trọng.
+                    Thích cả những lúc em vui vẻ, đôi khi hơi trẻ con, và cả những khi em không vui nhưng vẫn cố tỏ ra bình thường.
+                    Những điều nhỏ nhặt ấy dần trở thành những điều anh mong chờ mỗi ngày.
+                </p>
+
+                <p>
+                    Anh không hứa sẽ cho em cả thế giới,
+                    nhưng anh hứa sẽ luôn ở bên em:
+                    lúc em vui để cùng cười,
+                    lúc em buồn để lặng lẽ ôm em thật chặt.
+                </p>
+
+                <p>
+                    Anh yêu em, không chỉ hôm nay
+                    mà cho tất cả những ngày sau.
+                    Em có đồng ý làm người yêu và là người đồng hành của anh không? ♥
+                </p>
+
+                <p class="letter-signature">
+                    Anh yêu em♥,<br>
+                    <span class="signature-name">Nguyễn Thạch Lê Hoàn♥</span>
+                </p>
+
+            </div>
+
+            <button id="close-letter">
+                Đóng thư
+            </button>
+
+        </div>
+
+    </div>
+
+<!-- KHU VỰC 4: XEM ẢNH VÀ VIDEO -->
+    <div id="media-viewer" class="media-viewer">
+
+        <div class="media-viewer-content">
+
+            <button id="close-media-viewer" class="close-media-viewer">
+                &times;
+            </button>
+
+            <img id="media-image" src="" alt="Kỷ niệm">
+
+            <video
+                id="media-video"
+                controls
+                playsinline
+                preload="metadata">
+            </video>
+
+        </div>
+
+    </div>
+
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
